@@ -1,65 +1,102 @@
 # PythonScripts
-Task 1
-Create a script that accepts the file name and puts its extension to output. If there is no extension - an exception should be raised.
-2. Given a list of integers. Remove duplicates from the list and create a tuple. Find the minimum and maximum number.
-3. Create a script that reads the access log from a file. The name of the file is provided as an argument. An output of the script should provide the total number of different User Agents and then provide statistics with the number of requests from each of them. Here is a link to an example access.log file.
-4. Given an input string, count occurrences of all characters within a string (e.g. pythonnohtyppy -> p:3, y:3, t:2, h:2, o:2, n:2).
-5. Write a script that gets system information like distro info, memory(total, used, free), CPU info (model, core numbers, speed), current user, system load average, and IP address. Use arguments for specifying resources. (For example, -d for distro -m for memory, -c for CPU, -u for user info, -l for load average, -i for IP address).
-Task 2: Create a script that uses the Survey Monkey (https://www.surveymonkey.com) service, creates a survey.
-PREREQUISITES:
-Sign up at https://www.surveymonkey.com 
-Create a draft application at https://developer.surveymonkey.com   
-No need to deploy your application. It's just for testing. Do not forget to set permissions for your application.
-After creating a draft application you will obtain an ACCESS_TOKEN which is needed to do API requests from your script.
-REQUIREMENTS:
-The script should accept a JSON file with questions for the survey and a text file with a list of email addresses.
-The structure of a JSON file with questions:
+
+This repository contains multiple Python tasks covering file handling, data processing, system information retrieval, and API integration.
+
+---
+
+## Task 1
+
+### 1. File Extension Extractor
+- **Goal:** Create a script that:
+  - Accepts a file name as input.
+  - Outputs the file's extension.
+  - Raises an exception if no extension exists.
+
+---
+
+### 2. List Deduplication & Min/Max Finder
+- **Goal:** Given a list of integers:
+  - Remove duplicates.
+  - Convert the resulting list to a tuple.
+  - Find the minimum and maximum numbers.
+
+---
+
+### 3. Access Log Analyzer
+- **Goal:** Create a script that:
+  - Reads an access log from a file (file name provided as argument).
+  - Outputs:
+    1. Total number of unique User Agents.
+    2. Statistics with the number of requests per User Agent.
+- **Note:** Example `access.log` file link provided.
+
+---
+
+### 4. Character Counter
+- **Goal:** Given an input string, count the occurrences of all characters.  
+  - Example: `pythonnohtyppy → p:3, y:3, t:2, h:2, o:2, n:2`.
+
+---
+
+### 5. System Information Script
+- **Goal:** Write a script that retrieves system information:
+  - **Distro info**  
+  - **Memory:** total, used, free  
+  - **CPU info:** model, core numbers, speed  
+  - **Current user**  
+  - **System load average**  
+  - **IP address**
+- **Arguments:**
+  - `-d` → Distro info  
+  - `-m` → Memory info  
+  - `-c` → CPU info  
+  - `-u` → User info  
+  - `-l` → Load average  
+  - `-i` → IP address  
+
+---
+
+## Task 2: Survey Monkey API Integration
+
+Create a script that integrates with [Survey Monkey](https://www.surveymonkey.com) to create a survey.
+
+### Prerequisites
+1. Sign up at [Survey Monkey](https://www.surveymonkey.com).  
+2. Create a draft application at [Survey Monkey Developer](https://developer.surveymonkey.com).  
+3. Obtain an **ACCESS_TOKEN** for making API requests.
+4. Set the required permissions for the application.
+
+---
+
+### Requirements
+- The script should:
+  - Accept a **JSON file** with survey questions.
+  - Accept a **text file** with a list of email addresses.
+- **JSON file structure example:**
+
+```json
 {
-
-   "Survey_Name": {
-
-      "Page_Name": {
-
-          "Question1_Name": {
-
-              "Description" : "Description of question",
-
-              "Answers" : [
-
-                  "Answer1",
-
-                  "Answer2",
-
-                  "Answer3"
-
-              ]
-
-          },
-
-          "Question2_Name": {
-
-              "Description" : "Description of question",
-
-              "Answers" : [
-
-                  "Answer1",
-
-                  "Answer2",
-
-                  "Answer3"
-
-              ]
-
-          }
-
-          . . .
-
+  "Survey_Name": {
+    "Page_Name": {
+      "Question1_Name": {
+        "Description": "Description of question",
+        "Answers": [
+          "Answer1",
+          "Answer2",
+          "Answer3"
+        ]
+      },
+      "Question2_Name": {
+        "Description": "Description of question",
+        "Answers": [
+          "Answer1",
+          "Answer2",
+          "Answer3"
+        ]
       }
-
-   }
-
+    }
+  }
 }
 
-iii.     There should be at least 3 questions and 2 recipients.
 
 
