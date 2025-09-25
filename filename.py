@@ -1,9 +1,11 @@
 #!/usr/bin/python3.11
 
+
 import argparse 
 parser = argparse.ArgumentParser(description='Read a files extension')
 parser.add_argument('filename',type=str, help='the file to read the extension from')
 args=parser.parse_args()
+#Finding the position of the .
 index=args.filename.find(".")
 extension=args.filename[index:]
 
