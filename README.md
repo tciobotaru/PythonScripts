@@ -97,10 +97,10 @@ Create a script that integrates with [Survey Monkey](https://www.surveymonkey.co
     }
   }
 }
-```json
 
 
-```EMAIL COLLECTION DIDNT WORK AS I HAD TO UPGRADE TO THE PAID VERSION BUT HERE IS THE LINK FOR THE FREE COLLECTOR https://www.surveymonkey.com/r/FXXK69M
+Note: Email sending didn’t work because that feature requires a paid SurveyMonkey account.
+However, the survey can still be shared via the free weblink collector: https://www.surveymonkey.com/r/FXXK69M
 
 
 
