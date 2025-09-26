@@ -1,0 +1,19 @@
+{
+    "Customer Feedback": {
+        "Page 1": {
+            "Question1": {
+                "Description": "How satisfied are you with our service?",
+                "Answers": ["Very satisfied", "Neutral", "Dissatisfied"]
+            },
+            "Question2": {
+                "Description": "Would you recommend us?",
+                "Answers": ["Yes", "No"]
+            },
+            "Question3": {
+                "Description": "What can we improve?",
+                "Answers": ["Service", "Quality", "Support"]
+            }
+        }
+    }
+}
+
