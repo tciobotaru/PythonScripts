@@ -97,7 +97,7 @@ Create a script that integrates with [Survey Monkey](https://www.surveymonkey.co
     }
   }
 }
-
+```json
 
 
 ```EMAIL COLLECTION DIDNT WORK AS I HAD TO UPGRADE TO THE PAID VERSION BUT HERE IS THE LINK FOR THE FREE COLLECTOR https://www.surveymonkey.com/r/FXXK69M
