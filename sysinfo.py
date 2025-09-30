@@ -1,45 +1,36 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import argparse
-import platform
+import subprocess
 import getpass
-import socket
-import os
-import psutil
-import distro
+
+
+def run_cmd(cmd):
+    """Run a shell command and return its output."""
+    result = subprocess.run(cmd, shell=True, text=True, capture_output=True)
+    return result.stdout.strip() if result.returncode == 0 else f"Error running {cmd}"
 
 def get_distro():
-    name, version, codename = distro.linux_distribution(full_distribution_name=False)
-    print(f"Distro: {name} {version} ({codename})")
+    print("Distro:", run_cmd("lsb_release -d | cut -f2"))
 
 def get_memory():
-    mem = psutil.virtual_memory()
-    print(f"Memory Total: {mem.total // (1024**2)} MB")
-    print(f"Memory Used: {mem.used // (1024**2)} MB")
-    print(f"Memory Free: {mem.available // (1024**2)} MB")
+    print(run_cmd("free -m"))
 
 def get_cpu():
-    print(f"CPU Model: {platform.processor()}")
-    print(f"CPU Cores: {psutil.cpu_count(logical=False)} physical / {psutil.cpu_count(logical=True)} logical")
-    freq = psutil.cpu_freq()
-    if freq:
-        print(f"CPU Speed: {freq.current:.2f} MHz")
-    else:
-        print("CPU Speed: N/A")
+    print("CPU Info:")
+    print(run_cmd("lscpu | egrep 'Model name|CPU(s)|Core|MHz'"))
 
 def get_user():
     print(f"Current User: {getpass.getuser()}")
 
 def get_load():
-    load1, load5, load15 = os.getloadavg()
-    print(f"Load Average (1, 5, 15 min): {load1}, {load5}, {load15}")
+    print("Load Average:", run_cmd("uptime | awk -F'load average:' '{print $2}'"))
 
 def get_ip():
-    hostname = socket.gethostname()
-    ip_address = socket.gethostbyname(hostname)
-    print(f"IP Address: {ip_address}")
+    ip = run_cmd("hostname -I | awk '{print $1}'")
+    print(f"IP Address: {ip}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="System Information Script")
+    parser = argparse.ArgumentParser(description="System Information Script (Linux commands version)")
     parser.add_argument("-d", action="store_true", help="Show distro info")
     parser.add_argument("-m", action="store_true", help="Show memory info")
     parser.add_argument("-c", action="store_true", help="Show CPU info")
