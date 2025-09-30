@@ -73,6 +73,9 @@ Create a script that integrates with [Survey Monkey](https://www.surveymonkey.co
   - Accept a **JSON file** with survey questions.
   - Accept a **text file** with a list of email addresses.
 - **JSON file structure example:**
+ - **Note:**
+Email sending didn’t work because that feature requires a paid SurveyMonkey account.
+However, the survey can still be shared via the free weblink collector: https://www.surveymonkey.com/r/FXXK69M
 
 ```json
 {
@@ -97,6 +100,7 @@ Create a script that integrates with [Survey Monkey](https://www.surveymonkey.co
     }
   }
 }
+
 
 
 
